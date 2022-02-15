@@ -5,10 +5,9 @@ public class CameraRotation : MonoBehaviour
     public float speed = 5f;
     private Transform rotator;
 
-    private void Start()
+        private void Start()
     {
-        rotator = GetComponent<Transform>();
-
+        rotator = GetComponent<Transform>(); 
     }
 
     private void Update()

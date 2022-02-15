@@ -22,7 +22,7 @@ public class CanvasButtons : MonoBehaviour
     {
         if (PlayerPrefs.GetString("music") != "No")
             GetComponent<AudioSource>().Play();
-        SceneManager.LoadScene("Shop");
+        SceneManager.LoadScene("Shop");               
     }
 
     public void CloseShop()
@@ -30,13 +30,14 @@ public class CanvasButtons : MonoBehaviour
         if (PlayerPrefs.GetString("music") != "No")
             GetComponent<AudioSource>().Play();
         SceneManager.LoadScene("Main");
+        
     }
 
     public void Share()
     {
         if (PlayerPrefs.GetString("music") != "No")
             GetComponent<AudioSource>().Play();
-        Application.OpenURL("https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbF92MjlQa1dzSHVoeUluRmlndUpIczVBSWhEQXxBQ3Jtc0tuZml2MlM4bVNra096MGJiZXFqY2oyc01KUExzdG5RS0dtTUQwaGhEUWx3THZPblFsNTR6ejR2VXJFSFZnYWoxNzU1aGU5UVdjZzA4T181alpiZUowQzFyYjhqWFZvcDV6NEc2VGlOdUVzUVNIbEFnUQ&q=https%3A%2F%2Fitproger.com%2Fcourse%2Funity-gamedev%2F5");
+        Application.OpenURL("https://github.com/Vladonisimys/CubeTower");
     }
 
     public void MusicWork()

@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     public GameObject[] cubesToCreate;
     public GameObject allCubes, vfx;
     public GameObject[] canvasStartPage;
+    public GameObject restartButton;
 
     public Color[] bgColors;
     private Color toCameraColor;
@@ -50,7 +51,7 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         AddPosibleCubes(PlayerPrefs.GetInt("score"));
-        scoreTxt.text = $"<size=46>Best:  </size> {PlayerPrefs.GetInt("score")} \n<size=36><color=#802C41> now: </color></size><size=56><color=#802C41> 0</color></size>";
+        scoreTxt.text = $"<size=36>Best:  {PlayerPrefs.GetInt("score")} </size>\n<size=26><color=#802C41> now: </color></size><size=28><color=#802C41> 0</color></size>";
         toCameraColor = Camera.main.backgroundColor;
         mainCam = Camera.main.transform;
         camMoveToYPosition = 5.45f + nowCube.y - 1f;
@@ -106,6 +107,7 @@ public class GameController : MonoBehaviour
             Destroy(cubeToPlace.gameObject);
             IsLose = true;
             StopCoroutine(showCubePlace);
+            restartButton.SetActive(true);
         }
 
 
@@ -181,7 +183,7 @@ public class GameController : MonoBehaviour
 
         if (PlayerPrefs.GetInt("score") < maxY)
             PlayerPrefs.SetInt("score", maxY);
-        scoreTxt.text = $"<size=46>Best:  </size> {PlayerPrefs.GetInt("score")} \n<size=36><color=#802C41> now: </color></size><size=56><color=#802C41> {maxY}</color></size>";
+        scoreTxt.text = $"<size=36>Best:  {PlayerPrefs.GetInt("score")} </size>\n<size=26><color=#802C41> now: </color></size><size=28><color=#802C41> {maxY}</color></size>";
 
         camMoveToYPosition = 5.45f + nowCube.y - 1f;
         maxHor = maxX > maxZ ? maxX : maxZ;
